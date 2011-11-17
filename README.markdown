@@ -1,9 +1,8 @@
-# ActiveBlog
+# ActiveBlog is a work in progress.
 
-ActiveBlog is mountable Rails engine.
+ActiveBlog is Rails engine written to satisfy blogging requirements. 
 
-ActiveBlog was written to satisfy simple blogging functionality. Here is the
-ActiveBlog BlogPost model:
+The ActiveBlog BlogPost model:
 
     create_table :blog_posts do |t|
       t.string :title
@@ -19,21 +18,11 @@ ActiveBlog BlogPost model:
 It is by no means a full blogging engine. There are no categories, no comments,
 and certainly no tagging. 
 
-ActiveBlog has two major dependencies: ActiveAdmin and Devise.
+ActiveBlog has the following dependencies: 
 
-The backend dashboard for ActiveBlog ships as an ActiveAdmin resource. The 
-authentication system depends on Devise.
-
-# Motivation
-
-ActiveBlog is intended to solve minimal blogging requirements. 
-
-I built ActiveBlog because I had several projects which required simple blogging
-functionality. I didn't want to build an authentication system and I didn't want
-to have to cobble together yet another blogging backend. 
-
-I didn't want to have to rebuild the same model and RSS logic over and over again
-throughout my projects.
+* ActiveAdmin, for the backend
+* Devise, for admin authentication
+* Redcarpet, for markdown rendering
 
 # How to install ActiveBlog
 
