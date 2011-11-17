@@ -1,7 +1,16 @@
 module ActiveBlog
   module ApplicationHelper
-    def markdown(text)
-      Redcarpet.new(text, :hard_wrap).to_html.html_safe
+    def blog_title
+      ActiveBlog.blog_title
+    end
+
+    def blog_sidebar(&block)
+      sidebar_content_for = ActiveBlog.blog_content_for_sidebar
+      if sidebar_content_for
+        content_for sidebar_content_for do
+          yield
+        end
+      end
     end
   end
 end
