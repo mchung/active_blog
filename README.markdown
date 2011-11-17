@@ -47,18 +47,17 @@ Run Bundler
 
 # How to configure ActiveBlog
 
-Run the generator. This installs migrations, the routes, and a setup file
+Run the generator. This modifies routes.rb and installs an initializer.
 
-    TODO
+  ./script/rails generate active_blog:install
+
+Install the migrations
+
+  rake active_blog:install:migrations
 
 Install the migations
 
     rake db:migrate
-
-Configure the setup file in config/initializers/active_blog.rb
-
-    1. The path to your application's layout file
-    2. The mounted path, i.e. /blog
 
 Start your server with `foreman` or `rails s` and visit your new blog located at:
 
@@ -67,4 +66,3 @@ Start your server with `foreman` or `rails s` and visit your new blog located at
 To create a new blog post, visit the admin area located at:
 
     http://localhost:5000/admin/blogs
-
