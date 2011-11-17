@@ -1,3 +1,1 @@
-ActiveBlog::Engine.routes.draw do
-  match "/" => "blog_posts#index"
-end
+# Add route entries to mapper.rb instead

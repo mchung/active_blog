@@ -1,5 +1,5 @@
 module ActiveBlog
   class Engine < Rails::Engine
-    isolate_namespace ActiveBlog
+    # engine_name 'active_blog'
   end
 end
