@@ -1,2 +1,6 @@
-<h1>BlogPosts#show</h1>
-<p>Find me in app/views/active_blog/blog_posts/show.html.erb</p>
+<h1><%= ActiveBlog.blog_title %></h1>
+
+<h2><%= @blog_post.title %></h2>
+<hr/>
+
+<%= markdown(@blog_post.body) %>

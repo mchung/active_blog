@@ -1,11 +1,17 @@
-<h1><%= ActiveBlog.blog_title %></h1>
+<h1><%= blog_title %></h1>
 
 <% if @blog_posts.empty? %>
-  Nothing written
+  <%= link_to "Write your first blog post", admin_active_blog_blog_posts_path %>
 <% end %>
 
 <% @blog_posts.each do |blog| %>
   <h2><%= blog.title %></h2>
-  <hr/>
+  <%= link_to "Permalink", active_blog_post_path(blog.cached_slug) %>
   <%= markdown(blog.body) %>
+  <hr/>
+<% end %>
+
+
+<%= blog_sidebar do %>
+  <br/>
 <% end %>
