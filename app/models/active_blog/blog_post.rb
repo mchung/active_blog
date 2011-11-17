@@ -1,6 +1,7 @@
 module ActiveBlog
   class BlogPost < ActiveRecord::Base
     set_table_name 'active_blog_blog_posts'
+    validates_presence_of :cached_slug, :on => :create, :message => "can't be blank"
 
     before_create :build_cached_slug
 
