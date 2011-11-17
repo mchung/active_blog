@@ -1,3 +1,7 @@
 ActiveBlog.setup do |config|
-  # Actually, there's nothing to configure at the moment. :)
+  # Name of your blog.
+  # config.blog_title = "Your Blog Title"
+
+  # Assuming your layout has a sidebar, active_blog will yield via content_for.
+  # config.blog_content_for_sidebar = :sidebar
 end
