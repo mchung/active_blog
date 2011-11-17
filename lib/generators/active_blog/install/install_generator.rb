@@ -19,7 +19,7 @@ module ActiveBlog
       end
 
       def rake_copy_migrations
-        rake('active_blog:install:migrations')
+        rake('active_blog_engine:install:migrations')
       end
     end
   end

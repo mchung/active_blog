@@ -43,19 +43,13 @@ Add the following line to your Gemfile
 
 Run Bundler
 
-  bundle update active_blog
+    bundle update active_blog
 
-# How to configure ActiveBlog
+Run the generator
 
-Run the generator. This modifies routes.rb and installs an initializer.
-
-  ./script/rails generate active_blog:install
+    ./script/rails generate active_blog:install
 
 Install the migrations
-
-  rake active_blog:install:migrations
-
-Install the migations
 
     rake db:migrate
 
@@ -65,4 +59,4 @@ Start your server with `foreman` or `rails s` and visit your new blog located at
 
 To create a new blog post, visit the admin area located at:
 
-    http://localhost:5000/admin/blogs
+    http://localhost:5000/admin/active_blog_blog_posts
