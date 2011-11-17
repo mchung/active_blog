@@ -7,11 +7,11 @@ require "active_blog/version"
 Gem::Specification.new do |s|
   s.name        = "active_blog"
   s.version     = ActiveBlog::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of ActiveBlog."
-  s.description = "TODO: Description of ActiveBlog."
+  s.authors     = ["Marc Chung"]
+  s.email       = ["mchung@gmail.com"]
+  s.homepage    = "http://github.com/mchung/active_blog"
+  s.summary     = "A barebones, markdown, blogging Rails Engine."
+  s.description = "ActiveBlog is a Rails Engine for Blogging"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
