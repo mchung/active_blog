@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    active_blog (0.0.1)
+    active_blog (0.0.2)
       rails (~> 3.1.1)
       redcarpet
 
