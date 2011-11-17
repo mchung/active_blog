@@ -3,7 +3,7 @@ module ActiveBlog
     set_table_name 'active_blog_blog_posts'
     validates_presence_of :cached_slug, :on => :create, :message => "can't be blank"
 
-    before_create :build_cached_slug
+    before_validation :build_cached_slug
 
     scope :live, where("published_at < ? AND draft = ?", Time.now, false)
     def build_cached_slug
