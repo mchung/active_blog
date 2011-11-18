@@ -1,0 +1,15 @@
+<div class="active_blog entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <h2>
+    <small>
+      <meta itemprop="datePublished" content="<%= schema_date(blog_post.published_at) %>">
+      <%= blog_post.published_at.strftime("%B %e %G") %>
+      <a href="<%= active_blog_post_path(blog_post.cached_slug) %>" itemscope itemprop="url">∞</a>
+    </small>
+    <br/>
+    <span class="active_blog title" itemprop="headline"><%= blog_post.title %></span>
+  </h2>
+
+  <div class="active_blog body" itemprop="articleBody">
+    <%= markdown(blog_post.body) %>
+  </div>
+<hr/>

@@ -1,10 +1,11 @@
-<h1><%= ActiveBlog.blog_title %></h1>
+<div class="section active_blog show">
+  <h1><%= blog_title %></h1>
 
-<h2><%= @blog_post.title %></h2>
-<hr/>
+  <%= render :partial => "blog_post", :locals => {:blog_post => @blog_post} %>
+</div>
 
-<%= markdown(@blog_post.body) %>
-
-<%= blog_sidebar do %>
-  <br/>
-<% end %>
+<div class="section active_blog sidebar">
+  <%= blog_sidebar do %>
+    <br/>
+  <% end %>
+</div>

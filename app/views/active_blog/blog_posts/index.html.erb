@@ -1,17 +1,15 @@
-<h1><%= blog_title %></h1>
+<div class="section active_blog index" itemscope itemtype="http://schema.org/Blog">
+  <h1><%= blog_title %></h1>
 
-<% if @blog_posts.empty? %>
-  <%= link_to "Write your first blog post", admin_active_blog_blog_posts_path %>
-<% end %>
+  <% if @blog_posts.empty? %>
+    <%= link_to "Write your first blog post", admin_active_blog_blog_posts_path %>
+  <% end %>
 
-<% @blog_posts.each do |blog| %>
-  <h2><%= blog.title %></h2>
-  <%= link_to "Permalink", active_blog_post_path(blog.cached_slug) %>
-  <%= markdown(blog.body) %>
-  <hr/>
-<% end %>
+  <%= render :partial => "blog_post", :collection => @blog_posts %>
+</div>
 
-
-<%= blog_sidebar do %>
-  <br/>
-<% end %>
+<div class="section active_blog sidebar">
+  <%= blog_sidebar do %>
+    <br/>
+  <% end %>
+</div>
