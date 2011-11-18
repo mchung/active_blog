@@ -6,3 +6,7 @@
 div.active_blog.body {
   padding-top: 10px;
 }
+
+ul.recent li {
+  padding-top: 5px;
+}
