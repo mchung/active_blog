@@ -1,6 +1,6 @@
 # ActiveBlog is a work in progress.
 
-ActiveBlog is Rails engine written to satisfy blogging requirements. 
+ActiveBlog is Rails engine written to satisfy *minimal* blogging requirements. 
 
 The ActiveBlog BlogPost model:
 
