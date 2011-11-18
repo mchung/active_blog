@@ -6,6 +6,7 @@ module ActiveBlog
     before_validation :build_cached_slug
 
     scope :live, where("published_at < ? AND draft = ?", Time.now, false)
+    scope :recent, limit(5)
     def build_cached_slug
       self.cached_slug = to_slug(title)
     end
