@@ -49,3 +49,10 @@ Start your server with `foreman` or `rails s` and visit your new blog located at
 To create a new blog post, visit the admin area located at:
 
     http://localhost:5000/admin/active_blog_blog_posts
+
+
+# TODO
+
+* The ActiveAdmin BlogPost form should show realtime Markdown updates
+* The ActiveAdmin BlogPost form should allow users to upload content to S3
+* Tests
