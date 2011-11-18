@@ -21,6 +21,10 @@ module ActiveBlog
       def rake_copy_migrations
         rake('active_blog_engine:install:migrations')
       end
+
+      def show_readme
+        readme("README")
+      end
     end
   end
 end

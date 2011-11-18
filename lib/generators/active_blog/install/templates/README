@@ -1,0 +1,7 @@
+
+Thanks for installing ActiveBlog.
+
+Make sure to add the following stylesheet to your application.css
+
+    *= require 'active_blog/application'
+
