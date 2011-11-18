@@ -4,8 +4,4 @@
   <%= render :partial => "blog_post", :locals => {:blog_post => @blog_post} %>
 </div>
 
-<div class="section active_blog sidebar">
-  <%= blog_sidebar do %>
-    <br/>
-  <% end %>
-</div>
+<%= render :partial => "sidebar" %>

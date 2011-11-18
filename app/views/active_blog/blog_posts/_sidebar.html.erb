@@ -1,0 +1,10 @@
+<%= blog_sidebar do %>
+  <div class="section active_blog sidebar">
+    <h6>Recent posts</h6>
+  </div>
+  <ul class="unstyled">
+    <% @recent_blog_posts.each do |recent_blog_post| %>
+      <li><%= link_to recent_blog_post.title, active_blog_post_path(recent_blog_post.cached_slug) %></li>
+    <% end %>
+  </ul>
+<% end %>
