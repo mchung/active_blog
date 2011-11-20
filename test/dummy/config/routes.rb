@@ -1,4 +1,6 @@
 Dummy::Application.routes.draw do
+  active_blog_at '/blog'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
