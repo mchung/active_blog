@@ -1,7 +1,13 @@
 
-Thanks for installing ActiveBlog.
+TO COMPLETE YOUR INSTALLATION
 
-Make sure to add the following stylesheet to your application.css
+1. Add the following line to application.css
 
     *= require 'active_blog/application'
 
+2. Add the following to active_admin.css
+
+    // ActiveBlog CSS Styles
+    @import "active_blog/active_admin"
+
+Thanks for installing ActiveBlog!

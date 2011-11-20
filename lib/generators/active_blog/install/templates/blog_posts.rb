@@ -1,11 +1,6 @@
 ActiveAdmin.register ActiveBlog::BlogPost do
-  form do |f|
-    f.inputs "New Blog" do
-      f.input :title
-      f.input :body, :as => :text
-      f.input :draft, :as => :boolean
-      f.input :published_at, :label => "Publish post at"
-    end
-    f.buttons
+  form :partial => 'active_blog/active_admin/blog_post_form'
+  show :title => :title do
+    render 'active_blog/active_admin/blog_post_show'
   end
 end
