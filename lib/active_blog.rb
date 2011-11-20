@@ -1,6 +1,7 @@
 require 'active_blog/engine'
 require 'active_blog/mapper'
 require 'redcarpet'
+require 'active_blog/ext/string'
 
 module ActiveBlog
 
