@@ -1,10 +1,10 @@
 #main_content {
   margin: 0 auto;
-  #main_form {
+  #main_form, .panel.show.blog {
     float: left;
     width: 49%;
   }
-  #live_preview {
+  #live_preview, .buffer {
     float: right;
     width: 49%;
     background-color: #efefef;
@@ -17,11 +17,5 @@
       font-size: 90%;
       font-weight: bold;
     }
-  }
-}
-
-.buttons {
-  .cancel {
-    padding-top: 5px;
   }
 }

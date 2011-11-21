@@ -2,7 +2,7 @@ module ActiveBlog
   class BlogPostsController < ApplicationController
 
     # TODO(mc): How can I avoid this additional look up?
-    before_filter do
+    before_filter :only => [:index, :show] do
       @recent_blog_posts = BlogPost.live.order('published_at DESC').recent
     end
 
@@ -12,6 +12,23 @@ module ActiveBlog
   
     def show
       @blog_post = BlogPost.live.where(:cached_slug => params[:cached_slug]).first
+      if @blog_post
+        render
+      else
+        # TODO(mc): Should 404
+        redirect_to active_blog_path, :notice => "No blog post with that URL"
+      end
+    end
+
+    def _preview
+      @active_blog_blog_post = BlogPost.new(params[:active_blog_blog_post])
+      @blog_post = render_to_string(:partial => 'active_blog/active_admin/blog_post_show')
+
+      respond_to do |format|
+        format.js do
+          render '_preview.js'
+        end
+      end
     end
   end
 end

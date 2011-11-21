@@ -1,0 +1,15 @@
+<div id="main_form">
+  <%= semantic_form_for [:admin, @active_blog_blog_post] do |f| %>
+    <%= f.inputs "Write a new blog post" do %>
+      <%= f.input :title, :as => :string, :required => true, :hint => "A great blog post title", :input_html => { :placeholder => "A great blog post title" } %>
+      <%= f.input :body, :as => :text, :label => "Blog post (Markdown)", :hint => "Use Markdown"%>
+      <%= f.input :draft, :as => :boolean, :label => "Draft?", :hint => "Drafts are not published" %>
+      <%= f.input :published_at, :label => "Publication date" %>
+    <% end %>
+    <%= f.buttons do %>
+      <%= f.commit_button %>
+      <li class="cancel"><%= link_to("Preview", active_blog_preview_path, { :id => "button-preview", :remote => true, "data-type" => "script"}) %>
+    <% end %>
+  <% end %>
+</div>
+<div id="live_preview"></div>
