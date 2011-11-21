@@ -15,13 +15,17 @@ ActiveRecord::Schema.define(:version => 20111116040223) do
 
   create_table "active_blog_blog_posts", :force => true do |t|
     t.string   "title"
-    t.string   "body"
+    t.text     "body"
     t.boolean  "draft"
     t.datetime "published_at"
     t.string   "cached_slug"
     t.string   "custom_url"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "active_blog_blog_posts", ["cached_slug"], :name => "index_active_blog_blog_posts_on_cached_slug", :unique => true
+  add_index "active_blog_blog_posts", ["id"], :name => "index_active_blog_blog_posts_on_id"
 
 end

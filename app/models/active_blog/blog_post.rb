@@ -5,7 +5,10 @@ module ActiveBlog
     scope :live, where('published_at < ? AND draft = ?', Time.now, false)
     scope :recent, limit(5)
 
-    validates_presence_of :cached_slug, :on => :create, :message => "can't be blank"
+    validates_presence_of :title, :allow_blank => false, :allow_nil => false, :message => "can't be blank"
+    validates_presence_of :body, :allow_blank => false, :allow_nil => false, :message => "can't be blank"
+    validates_presence_of :cached_slug, :allow_blank => false, :allow_nil => false, :message => "can't be blank"
+    validates_uniqueness_of :cached_slug, :message => "must be unique"
     validate :title_must_not_start_with_dash
     before_validation :build_cached_slug
     after_initialize :init

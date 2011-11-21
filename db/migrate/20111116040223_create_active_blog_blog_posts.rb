@@ -12,5 +12,6 @@ class CreateActiveBlogBlogPosts < ActiveRecord::Migration
       t.timestamps
     end
     add_index :active_blog_blog_posts, :id
+    add_index :active_blog_blog_posts, :cached_slug, :unique => true
   end
 end
