@@ -23,5 +23,10 @@ module ActiveBlog
       bp.save
       assert_equal "the-title-is-great", bp.cached_slug
     end
+
+    test "default published_at is now" do
+      bp = BlogPost.new
+      assert_not_nil bp.published_at
+    end
   end
 end
