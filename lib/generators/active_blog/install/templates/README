@@ -10,4 +10,8 @@ TO COMPLETE YOUR INSTALLATION
     // ActiveBlog CSS Styles
     @import "active_blog/active_admin"
 
+3. Add the following to active_admin.js
+
+    //= require active_blog/active_admin
+
 Thanks for installing ActiveBlog!
