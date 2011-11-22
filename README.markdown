@@ -56,4 +56,4 @@ To create a new blog post, visit the admin area located at:
 * The ActiveAdmin BlogPost form should show realtime Markdown updates
 * The ActiveAdmin BlogPost form should allow users to upload content to S3
 * Tests
-* Document Hooks (content_for :sidebar, content_for :title)
+* Document Parent App Hooks (content_for :sidebar, content_for :title, content_for: head)

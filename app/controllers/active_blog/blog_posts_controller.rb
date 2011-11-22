@@ -9,7 +9,7 @@ module ActiveBlog
     def index
       @blog_posts = BlogPost.live.order('published_at DESC')
     end
-  
+
     def show
       @blog_post = BlogPost.live.where(:cached_slug => params[:cached_slug]).first
       if @blog_post
@@ -28,6 +28,13 @@ module ActiveBlog
         format.js do
           render '_preview.js'
         end
+      end
+    end
+
+    def feed
+      @blog_posts = BlogPost.live.order('published_at DESC').limit(10)
+      respond_to do |format|
+        format.atom
       end
     end
   end

@@ -12,5 +12,21 @@ module ActiveBlog
         end
       end
     end
+
+    def blog_author_name
+      ActiveBlog.blog_author_name
+    end
+
+    def blog_author_uri
+      ActiveBlog.blog_author_uri
+    end
+
+    def blog_author_email
+      ActiveBlog.blog_author_email
+    end
+
+    def blog_atom_link_tag
+      auto_discovery_link_tag(:atom, "#{active_blog_feed_url}.atom", {:title => "Subscribe to this blog"})
+    end
   end
 end

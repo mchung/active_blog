@@ -13,6 +13,18 @@ module ActiveBlog
   mattr_accessor :blog_content_for_sidebar
   @@blog_content_for_sidebar = nil
 
+  # Blog author's name
+  mattr_accessor :blog_author_name
+  @@blog_author_name = nil
+
+  # Blog author's uri
+  mattr_accessor :blog_author_uri
+  @@blog_author_uri = nil
+
+  # Blog author's email
+  mattr_accessor :blog_author_email
+  @@blog_author_email = nil
+
   def self.setup
     yield self
   end
