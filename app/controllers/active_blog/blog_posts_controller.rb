@@ -20,14 +20,12 @@ module ActiveBlog
       end
     end
 
-    def _preview
+    def preview
       @active_blog_blog_post = BlogPost.new(params[:active_blog_blog_post])
       @blog_post = render_to_string(:partial => 'active_blog/active_admin/blog_post_show')
 
       respond_to do |format|
-        format.js do
-          render '_preview.js'
-        end
+        format.js
       end
     end
 
