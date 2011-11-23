@@ -1,6 +1,6 @@
 atom_feed({}) do |feed|
   feed.title(blog_title)
-  feed.updated(@blog_posts.first.published_at)
+  feed.updated(@blog_posts[0].published_at) if @blog_posts.length > 0
 
   @blog_posts.each do |post|
     feed.entry(post, {
