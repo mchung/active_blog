@@ -1,18 +1,16 @@
-<% url = Haikuist::Application.routes.url_helpers %>
-<% preview = url.active_blog_preview_path %>
 $(document).ready(function() {
   var $form = $('form.active_blog_blog_post');
 
   $("#button-preview").bind("ajax:before", function() {
     var action = $form.attr('action');
-    $form.attr('action', '<%= preview %>');
+    $form.attr('action', '/blog/-/preview');
     $form.submit();
     $form.attr('action', action);
     return false;
   });
 
   $form.bind('submit', function() {
-    if ($form.attr('action') === '<%= preview %>') {
+    if ($form.attr('action') === '/blog/-/preview') {
       console.log("In post " + this.action);
       $.post(this.action, $(this).serialize(), null, "script");
       return false;
