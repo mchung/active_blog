@@ -9,6 +9,10 @@ module ActiveBlog
   mattr_accessor :blog_title
   @@blog_title = 'New ActiveBlog!'
 
+  # The blog's description
+  mattr_accessor :blog_description
+  @@blog_description = "Here's where your description goes"
+
   # Yield to your layout's sidebar, i.e. :sidebar
   mattr_accessor :blog_content_for_sidebar
   @@blog_content_for_sidebar = nil
