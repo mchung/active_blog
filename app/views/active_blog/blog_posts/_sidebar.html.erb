@@ -4,7 +4,7 @@
   </div>
   <ul class='unstyled recent'>
     <% @recent_blog_posts.each do |recent_blog_post| %>
-      <li><a href='<%= active_blog_post_path(recent_blog_post.cached_slug) %>' itemscope itemprop='url' itemscope itemprop='url' title='<%= recent_blog_post.title %>'><%= recent_blog_post.title %></a></li>
+      <li><a href='<%= active_blog_post_path(recent_blog_post.cached_slug) %>' title='<%= recent_blog_post.title %>'><%= recent_blog_post.title %></a></li>
     <% end %>
   </ul>
 <% end %>
