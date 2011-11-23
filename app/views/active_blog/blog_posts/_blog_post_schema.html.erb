@@ -1,0 +1,5 @@
+<%= schema_span_for 'name', blog_post.title %>
+<%= schema_span_for 'description', markdown_for_schema(blog_post.body) %>
+<%= schema_span_for 'datePublished', schema_date(blog_post.published_at) %>
+<%= schema_span_for 'headline', blog_post.title %>
+<%= schema_span_for 'url', active_blog_post_url(blog_post.cached_slug) %>

@@ -17,5 +17,9 @@ module ActiveBlog
     def schema_date(date)
       date.strftime("%Y-%m-%d")
     end
+
+    def schema_span_for(name, content)
+      content_tag(:span, "", :itemprop => name, :content => content)
+    end
   end
 end
