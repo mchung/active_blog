@@ -9,7 +9,7 @@ atom_feed({}) do |feed|
       :url => active_blog_post_url(post.cached_slug)
     }) do |entry|
       entry.title(post.title)
-      entry.content(post.body, :type => 'html')
+      entry.content(markdown(post.body), :type => 'html')
 
       entry.author do |author|
         author.name(blog_author_name) if blog_author_name
