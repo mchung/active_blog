@@ -6,7 +6,7 @@ module ActiveBlog
     end
 
     def markdown_for_schema(text)
-      truncate(strip_tags(markdown(text)).strip, :length => 250)
+      truncate(strip_tags(markdown(text)).strip.gsub(/\n/, ' '), :length => 250)
     end
 
     def make_markdown(opts)
