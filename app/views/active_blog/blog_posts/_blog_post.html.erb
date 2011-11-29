@@ -1,5 +1,18 @@
-<div class="active_blog entry" itemscope itemtype="http://schema.org/BlogPosting">
-  <%= render :partial => 'blog_post_schema', :locals => {:blog_post => blog_post} %>
+<%#
+  This partial is used by #index and #show. It behaves differently by displaying different schema
+  types according to the caller.
+
+  Google Rich Snippets doesn't like nested schemas in certain cases.
+%>
+<div class="active_blog entry" <%= show ? '' : "itemscope itemtype='http://schema.org/BlogPosting'" %>>
+  <%- if show %>
+    <%= content_for :schema do %>
+      <%= render :partial => 'blog_post_schema', :locals => {:blog_post => blog_post} %>
+    <% end %>
+  <% else %>
+    <%= render :partial => 'blog_post_schema', :locals => {:blog_post => blog_post} %>
+  <% end %>
+
   <h6>
     <%= blog_post.published_at.strftime("%B %e %G") %>
     <% if blog_post.new_record? %>

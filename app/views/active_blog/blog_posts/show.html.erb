@@ -1,10 +1,7 @@
 <%= content_for :title do %><%= @blog_post.title %><% end %>
 <%= content_for :schema_itemtype do %>http://schema.org/BlogPosting<% end %>
-<%= content_for :schema do %>
-  &nbsp;
-<% end %>
 <div class="section active_blog show">
   <h1><%= blog_title %></h1>
-  <%= render :partial => "blog_post", :locals => {:blog_post => @blog_post} %>
+  <%= render :partial => "blog_post", :locals => {:blog_post => @blog_post, :show => true} %>
 </div>
 <%= render :partial => "sidebar" %>
