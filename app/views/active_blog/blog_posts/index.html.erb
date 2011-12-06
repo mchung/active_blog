@@ -1,12 +1,12 @@
-<%= content_for :title do %><%= blog_title %><% end %>
-<%= content_for :head do %><%= blog_atom_link_tag %><% end %>
+<%= content_for :title do %><%= active_blog_title %><% end %>
+<%= content_for :head do %><%= active_blog_atom_link_tag %><% end %>
 <%= content_for :schema do %>
-  <%= schema_span_for 'name', blog_title %>
-  <%= schema_span_for 'description', blog_description %>
+  <%= schema_span_for 'name', active_blog_title %>
+  <%= schema_span_for 'description', active_blog_description %>
   <%= schema_span_for 'url', active_blog_url %>
 <% end %>
 <div class="section active_blog index">
-  <h1><%= blog_title %></h1>
+  <h1><%= active_blog_title %></h1>
 
   <% if @blog_posts.empty? %>
     <%= link_to "Write your first blog post", admin_active_blog_blog_posts_path %>

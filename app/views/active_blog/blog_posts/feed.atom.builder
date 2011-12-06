@@ -1,5 +1,5 @@
 atom_feed({}) do |feed|
-  feed.title(blog_title)
+  feed.title(active_blog_title)
   feed.updated(@blog_posts[0].published_at) if @blog_posts.length > 0
 
   @blog_posts.each do |post|
@@ -12,9 +12,9 @@ atom_feed({}) do |feed|
       entry.content(markdown(post.body), :type => 'html')
 
       entry.author do |author|
-        author.name(blog_author_name) if blog_author_name
-        author.uri(blog_author_uri) if blog_author_uri
-        author.email(blog_author_email) if blog_author_email
+        author.name(active_blog_author_name) if active_blog_author_name
+        author.uri(active_blog_author_uri) if active_blog_author_uri
+        author.email(active_blog_author_email) if active_blog_author_email
       end
     end
   end

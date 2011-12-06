@@ -6,28 +6,28 @@ require 'active_blog/ext/string'
 module ActiveBlog
 
   # The blog's title
-  mattr_accessor :blog_title
-  @@blog_title = 'New ActiveBlog!'
+  mattr_accessor :title
+  @@title = 'New ActiveBlog!'
 
   # The blog's description
-  mattr_accessor :blog_description
-  @@blog_description = "Here's where your description goes"
+  mattr_accessor :description
+  @@description = "Here's where your description goes"
 
   # Yield to your layout's sidebar, i.e. :sidebar
-  mattr_accessor :blog_content_for_sidebar
-  @@blog_content_for_sidebar = nil
+  mattr_accessor :content_for_sidebar
+  @@content_for_sidebar = nil
 
   # Blog author's name
-  mattr_accessor :blog_author_name
-  @@blog_author_name = nil
+  mattr_accessor :author_name
+  @@author_name = nil
 
   # Blog author's uri
-  mattr_accessor :blog_author_uri
-  @@blog_author_uri = nil
+  mattr_accessor :author_uri
+  @@author_uri = nil
 
   # Blog author's email
-  mattr_accessor :blog_author_email
-  @@blog_author_email = nil
+  mattr_accessor :author_email
+  @@author_email = nil
 
   def self.setup
     yield self

@@ -1,19 +1,19 @@
 ActiveBlog.setup do |config|
-  # Name of your blog.
-  # config.blog_title = "Your Blog Title"
+  # Title of your blog.
+  # config.title = "Your Blog Title"
 
   # Description
-  # config.blog_description = "Your Blog Description"
-
-  # Assuming your layout has a sidebar, active_blog will yield via content_for.
-  # config.blog_content_for_sidebar = :sidebar
+  # config.description = "Your Blog Description"
 
   # Blog author's name
-  # config.blog_author_name = "John Doe"
+  # config.author_name = "John Doe"
 
   # Blog author's URI
-  # config.blog_author_name = "http://example.com"
+  # config.author_name = "http://example.com"
 
   # Blog author's email
-  # config.blog_author_email = "mchung@example.com"
+  # config.author_email = "mchung@example.com"
+
+  # Assuming your layout has a sidebar, active_blog will yield via content_for.
+  # config.content_for_sidebar = :sidebar
 end
