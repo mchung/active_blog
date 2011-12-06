@@ -4,7 +4,7 @@ module ActiveBlog
     paginates_per ActiveBlog.paginates_per
     default_scope :order => 'published_at DESC'
 
-    scope :live, where('published_at < ? AND draft = ?', Time.now, false)
+    scope :live, where('published_at < ? AND draft = ?', Time.zone.now, false)
     scope :recent, limit(5)
 
     validates_presence_of :title, :allow_blank => false, :allow_nil => false, :message => "can't be blank"
