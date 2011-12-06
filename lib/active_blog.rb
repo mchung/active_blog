@@ -29,6 +29,10 @@ module ActiveBlog
   mattr_accessor :author_email
   @@author_email = nil
 
+  # Blog posts per page
+  mattr_accessor :paginates_per
+  @@paginates_per = 10
+
   def self.setup
     yield self
   end

@@ -1,6 +1,7 @@
 module ActiveBlog
   class BlogPost < ActiveRecord::Base
     set_table_name 'active_blog_blog_posts'
+    paginates_per ActiveBlog.paginates_per
 
     scope :live, where('published_at < ? AND draft = ?', Time.now, false)
     scope :recent, limit(5)

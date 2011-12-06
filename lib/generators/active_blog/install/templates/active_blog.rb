@@ -16,4 +16,7 @@ ActiveBlog.setup do |config|
 
   # Assuming your layout has a sidebar, active_blog will yield via content_for.
   # config.content_for_sidebar = :sidebar
+
+  # Blog posts per page
+  # config.paginates_per = 10
 end

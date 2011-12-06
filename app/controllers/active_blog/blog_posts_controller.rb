@@ -7,7 +7,7 @@ module ActiveBlog
     end
 
     def index
-      @blog_posts = BlogPost.live.order('published_at DESC')
+      @blog_posts = BlogPost.live.order('published_at DESC').page(params[:page])
     end
 
     def show

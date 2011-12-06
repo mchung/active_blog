@@ -4,6 +4,7 @@ require 'rails/all'
 
 Bundler.require
 require "active_blog"
+require "kaminari" # Load this manually.
 
 module Dummy
   class Application < Rails::Application
