@@ -1,12 +1,16 @@
 module ActiveBlog
   class BlogPostsController < ApplicationController
 
-    before_filter :only => [:index, :show] do
+    before_filter :only => [:index, :show, :archives] do
       @recent_blog_posts = BlogPost.live.recent
     end
 
     def index
       @blog_posts = BlogPost.live.page(params[:page])
+    end
+
+    def archives
+      @blog_posts = BlogPost.all
     end
 
     def show

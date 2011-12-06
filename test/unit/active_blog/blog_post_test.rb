@@ -28,5 +28,11 @@ module ActiveBlog
       bp = BlogPost.new
       assert_not_nil bp.published_at
     end
+
+    test "title can't have 'archives' in it" do
+      bp = BlogPost.new(:title => 'archives')
+      bp.save
+      assert_equal "cannot be named 'archives'", bp.errors.messages[:title].first
+    end
   end
 end

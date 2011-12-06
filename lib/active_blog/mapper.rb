@@ -15,6 +15,8 @@ module ActionDispatch::Routing
         match '/' => 'active_blog/blog_posts#index', :as => :active_blog, :via => [:get]
         match '/-/preview' => 'active_blog/blog_posts#preview', :as => :active_blog_preview, :via => [:post, :put]
         match '/-/feed' => 'active_blog/blog_posts#feed', :as => :active_blog_feed, :via => [:get]
+        match '/archives' => 'active_blog/blog_posts#archives', :as => :active_blog_archives, :via => [:get]
+        # Always last.
         match '/:cached_slug' => 'active_blog/blog_posts#show', :as => :active_blog_post, :via => [:get]
       end
     end

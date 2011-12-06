@@ -12,6 +12,7 @@ module ActiveBlog
     validates_presence_of :cached_slug, :allow_blank => false, :allow_nil => false, :message => "can't be blank"
     validates_uniqueness_of :cached_slug, :message => "must be unique"
     validate :title_must_not_start_with_dash
+    validate :title_must_not_be
     before_validation :build_cached_slug
     after_initialize :init
 
@@ -28,6 +29,10 @@ module ActiveBlog
       if title.starts_with?('-')
         errors.add(:title, 'cannot start with a dash')
       end
+    end
+
+    def title_must_not_be
+      errors.add(:title, "cannot be named 'archives'") if title == 'archives'
     end
 
     def init
