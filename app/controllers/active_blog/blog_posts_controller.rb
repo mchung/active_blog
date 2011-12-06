@@ -1,13 +1,12 @@
 module ActiveBlog
   class BlogPostsController < ApplicationController
 
-    # TODO(mc): How can I avoid this additional look up?
     before_filter :only => [:index, :show] do
-      @recent_blog_posts = BlogPost.live.order('published_at DESC').recent
+      @recent_blog_posts = BlogPost.live.recent
     end
 
     def index
-      @blog_posts = BlogPost.live.order('published_at DESC').page(params[:page])
+      @blog_posts = BlogPost.live.page(params[:page])
     end
 
     def show
