@@ -32,10 +32,10 @@ module ActiveBlog
       end
     end
 
-    def feed
+    def atom
       @blog_posts = BlogPost.live.order('published_at DESC').limit(10)
       respond_to do |format|
-        format.atom
+        format.xml
       end
     end
   end

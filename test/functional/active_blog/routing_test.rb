@@ -15,8 +15,8 @@ module ActiveBlog
     test "should route /blog/-/preview" do
       assert_routing({:path => '/blog/-/preview', :method => :post}, {:controller=>"active_blog/blog_posts", :action=>"preview"})
     end
-    test "should route /blog/-/feed" do
-      assert_routing '/blog/-/feed', {:controller=>"active_blog/blog_posts", :action=>"feed"}
+    test "should route /blog/atom.xml" do
+      assert_routing '/blog/atom.xml', {:controller=>"active_blog/blog_posts", :action=>"atom",:format=>:xml}
     end
     test "should route /blog/:cached_slug" do
       assert_routing '/blog/my-blog-post-title', {:controller=>"active_blog/blog_posts", :action=>"show", :cached_slug=>"my-blog-post-title"}
