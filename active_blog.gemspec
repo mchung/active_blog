@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 3.1.1"
   s.add_dependency "redcarpet", "~> 2.0.0b5"
-  s.add_dependency "kaminari", "~> 0.12.4"
+  s.add_dependency "kaminari"
 
   s.add_development_dependency "sqlite3"
 end
