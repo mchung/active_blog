@@ -50,7 +50,7 @@ Start your server with `foreman` or `rails s` and visit your new blog located at
 
 To create a new blog post, visit the admin area located at:
 
-    http://localhost:5000/admin/active_blog_blog_posts
+    http://localhost:5000/admin/blog_posts
 
 
 # TODO
