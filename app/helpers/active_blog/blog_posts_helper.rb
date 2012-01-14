@@ -21,5 +21,13 @@ module ActiveBlog
     def schema_span_for(name, content)
       content_tag(:span, "", :itemprop => name, :content => content)
     end
+
+    def blog_post_path(blog_post)
+      if blog_post.new_record?
+        admin_blog_posts_path(blog_post)
+      else
+        admin_blog_post_path(blog_post)
+      end
+    end
   end
 end

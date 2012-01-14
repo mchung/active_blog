@@ -1,10 +1,10 @@
-<div class="panel <%= @active_blog_blog_post.new_record? ? "new" : "show" %> blog">
-  <h3><%= @active_blog_blog_post.new_record? ? "Live Preview" : "Blog Entry" %></h3>
+<div class="panel <%= @blog_post.new_record? ? "new" : "show" %> blog">
+  <h3><%= @blog_post.new_record? ? "Live Preview" : "Blog Entry" %></h3>
   <div>
-    <h4><%= @active_blog_blog_post.title || "[Title]" %>
+    <h4><%= @blog_post.title || "[Title]" %>
     <span>
-      <% if @active_blog_blog_post.cached_slug %>
-        (<%= active_blog_post_url(:cached_slug => @active_blog_blog_post.cached_slug) %>)
+      <% if @blog_post.cached_slug %>
+        (<%= active_blog_post_url(:cached_slug => @blog_post.cached_slug) %>)
       <% end %>
     </span>
     </h4>
@@ -13,6 +13,6 @@
 
   </div>
   <div>
-    <%= markdown(@active_blog_blog_post.body || "Body") %>
+    <%= markdown(@blog_post.body || "Body") %>
   </div>
 </div>

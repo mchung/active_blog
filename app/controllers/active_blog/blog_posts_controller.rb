@@ -24,8 +24,8 @@ module ActiveBlog
     end
 
     def preview
-      @active_blog_blog_post = BlogPost.new(params[:active_blog_blog_post])
-      @blog_post = render_to_string(:partial => 'active_blog/active_admin/blog_post_show')
+      @blog_post = BlogPost.new(params[:active_blog_blog_post])
+      @blog_post_partial = render_to_string(:partial => 'active_blog/active_admin/blog_post_show')
 
       respond_to do |format|
         format.js

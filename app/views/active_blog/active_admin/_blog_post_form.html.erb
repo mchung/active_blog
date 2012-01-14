@@ -1,5 +1,5 @@
 <div id="main_form">
-  <%= semantic_form_for [:admin, @active_blog_blog_post] do |f| %>
+  <%= semantic_form_for(@blog_post, :url => blog_post_path(@blog_post)) do |f| %>
     <%= f.inputs "Write a new blog post" do %>
       <%= f.input :title, :as => :string, :required => true, :hint => "A great blog post title", :input_html => { :placeholder => "A great blog post title" } %>
       <%= f.input :cached_slug, :as => :string, :label => "Slug", :hint => "#{active_blog_url}/...", :input_html => { :disabled => true } %>

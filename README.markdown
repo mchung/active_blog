@@ -38,6 +38,8 @@ Run the generator
 
     ./script/rails generate active_blog:install
 
+[Follow the installer's directions](https://github.com/mchung/active_blog/blob/master/lib/generators/active_blog/install/templates/README)
+
 Install the migrations
 
     rake db:migrate

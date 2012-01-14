@@ -8,7 +8,7 @@ TO COMPLETE YOUR INSTALLATION
 2. Add the following to active_admin.css
 
     // ActiveBlog CSS Styles
-    @import "active_blog/active_admin"
+    @import "active_blog/active_admin";
 
 3. Add the following to active_admin.js
 
