@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    active_blog (0.5.0)
+    active_blog (0.6.0)
       kaminari
-      rails (~> 3.1.1)
+      rails (>= 3.1.1)
       redcarpet (~> 2.0.0b5)
 
 GEM
