@@ -33,7 +33,7 @@ Add the following line to your Gemfile
 
 Run Bundler
 
-    bundle update active_blog
+    bundle update --source active_blog
 
 Run the generator
 
@@ -68,3 +68,4 @@ Running tests
 
 * The ActiveAdmin BlogPost form should allow users to upload content to S3
 * Document Parent App Hooks (content_for :sidebar, content_for :title, content_for: head)
+* Missing ActiveAdmin UI tests.

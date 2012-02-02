@@ -22,11 +22,11 @@ module ActiveBlog
       content_tag(:span, "", :itemprop => name, :content => content)
     end
 
-    def blog_post_path(blog_post)
+    def blog_post_path_for(blog_post)
       if blog_post.new_record?
-        admin_blog_posts_path(blog_post)
+        admin_active_blog_blog_posts_path(blog_post)
       else
-        admin_blog_post_path(blog_post)
+        admin_active_blog_blog_post_path(blog_post)
       end
     end
   end
