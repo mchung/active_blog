@@ -23,6 +23,7 @@ ActiveBlog has the following dependencies:
 * ActiveAdmin, for the backend
 * Devise, for admin authentication
 * Redcarpet, for markdown rendering
+* PostgreSQL, for storage
 
 # How to install ActiveBlog
 
@@ -52,10 +53,18 @@ To create a new blog post, visit the admin area located at:
 
     http://localhost:5000/admin/blog_posts
 
+# How to hack on ActiveBlog
+
+Setup the development and test databases
+
+    rake app:db:setup
+    rake app:db:test:clone
+
+Running tests
+
+    rake test
 
 # TODO
 
-* The ActiveAdmin BlogPost form should show realtime Markdown updates
 * The ActiveAdmin BlogPost form should allow users to upload content to S3
-* Tests
 * Document Parent App Hooks (content_for :sidebar, content_for :title, content_for: head)
