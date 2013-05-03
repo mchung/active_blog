@@ -7,8 +7,8 @@
       <%= f.input :draft, :as => :boolean, :label => "Draft?", :hint => "Drafts are not published" %>
       <%= f.input :published_at, :label => "Publication date" %>
     <% end %>
-    <%= f.buttons do %>
-      <%= f.commit_button %>
+    <%= f.actions do %>
+      <%= f.action(:submit) %>
       <li class="cancel"><%= link_to("Preview", active_blog_preview_path, { :id => "button-preview", :remote => true, "data-type" => "script"}) %>
     <% end %>
   <% end %>
