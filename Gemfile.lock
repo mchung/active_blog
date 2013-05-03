@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    active_blog (0.7.0)
+    active_blog (0.8.0)
       activeadmin (>= 0.5.1)
       kaminari
       rails (>= 3.2.1)
