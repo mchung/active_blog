@@ -1,6 +1,6 @@
 module ActiveBlog
   class BlogPost < ActiveRecord::Base
-    set_table_name 'active_blog_blog_posts'
+    self.table_name = 'active_blog_blog_posts'
     paginates_per ActiveBlog.paginates_per
     default_scope :order => 'published_at DESC'
 
