@@ -2,10 +2,11 @@ module ActiveBlog
   class BlogPost < ActiveRecord::Base
     self.table_name = 'active_blog_blog_posts'
     paginates_per ActiveBlog.paginates_per
-    default_scope :order => 'published_at DESC'
+    default_scope { order(:published_at).reverse_order }
 
-    scope :live, where('published_at < ? AND draft = ?', Time.zone.now, false)
-    scope :recent, limit(5)
+    scope :live, -> { where('published_at < ? AND draft = ?', Time.zone.now, false) }
+    scope :recent, -> { limit(5) }
+    scope :blog_post, ->(slug) { live.where(:cached_slug => slug).first! }
 
     validates_presence_of :title, :allow_blank => false, :allow_nil => false, :message => "can't be blank"
     validates_presence_of :body, :allow_blank => false, :allow_nil => false, :message => "can't be blank"

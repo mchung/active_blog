@@ -16,10 +16,10 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.markdown"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", ">= 3.2.1"
-  s.add_dependency "activeadmin", ">= 0.5.1"
-  s.add_dependency "redcarpet", "~> 2.0.0b5"
-  s.add_dependency "kaminari"
+  s.add_dependency "rails", "~> 4.2.1"
+  s.add_dependency "activeadmin", '~> 1.0.0.pre1'
+  s.add_dependency "redcarpet", "~> 3.2.3"
+  s.add_dependency "kaminari", "~> 0.16.3"
 
   s.add_development_dependency "pg"
 end

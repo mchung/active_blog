@@ -13,8 +13,8 @@ module ActionDispatch::Routing
           # match '/:cached_slug', :action => :show, :on => :collection, :as => :post, :via => [:get]
         end
         match '/' => 'active_blog/blog_posts#index', :as => :active_blog, :via => [:get]
-        match '/-/preview' => 'active_blog/blog_posts#preview', :as => :active_blog_preview, :via => [:post, :put]
-        match '/atom.xml' => 'active_blog/blog_posts#atom', :as => :active_blog_feed, :via => [:get], :format => :xml
+        match '/-/preview' => 'active_blog/blog_posts#preview', :as => :active_blog_preview, :via => [:post, :put, :patch]
+        get  '/atom', :to => 'active_blog/blog_posts#atom', :as => :active_blog_feed, :constraints => { :format => 'xml' }
         match '/archives' => 'active_blog/blog_posts#archives', :as => :active_blog_archives, :via => [:get]
         # Always last.
         match '/:cached_slug' => 'active_blog/blog_posts#show', :as => :active_blog_post, :via => [:get]

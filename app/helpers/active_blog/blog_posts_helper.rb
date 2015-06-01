@@ -1,17 +1,12 @@
 module ActiveBlog
   module BlogPostsHelper
-    def markdown(text)
-      regular = { :hard_wrap => true, :autolink => true, :space_after_headers => true }
-      make_markdown(regular).render(text).html_safe
+
+    def markdown
+      @markdown ||= ActiveBlog::Markdown.renderer
     end
 
-    def markdown_for_schema(text)
-      truncate(strip_tags(markdown(text)).strip.gsub(/\n/, ' '), :length => 250)
-    end
-
-    def make_markdown(opts)
-      markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, opts)
-      markdown
+    def schema_blog_post(text, length = 250)
+      truncate(strip_tags(markdown.render(text)).strip.gsub(/\n/, ' '), :length => length)
     end
 
     def schema_date(date)

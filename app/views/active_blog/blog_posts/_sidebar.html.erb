@@ -1,11 +1,13 @@
 <%= active_blog_sidebar do %>
-  <div class='section active_blog sidebar'>
-    <h6>Recent posts</h6>
-  </div>
-  <ul class='unstyled recent'>
+  <div class="panel panel-default panel-recent-posts section active_blog sidebar">
+  <div class="panel-heading">Recent posts</div>
+  <ul class="list-group list-recent-posts">
     <% @recent_blog_posts.each do |recent_blog_post| %>
-      <li><a href='<%= active_blog_post_path(recent_blog_post.cached_slug) %>' title='<%= recent_blog_post.title %>'><%= recent_blog_post.title %></a></li>
+      <li class="list-group-item recent-post"><a href='<%= active_blog_post_path(recent_blog_post.cached_slug) %>' title='<%= recent_blog_post.title %>'><%= recent_blog_post.title %></a></li>
     <% end %>
   </ul>
-  <%= link_to 'Archives', active_blog_archives_path %>
+  <div class="panel-footer">
+    <%= link_to 'Archives', active_blog_archives_path %>
+  </div>
+</div>
 <% end %>

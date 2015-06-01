@@ -1,6 +1,6 @@
 require 'active_blog/engine'
 require 'active_blog/mapper'
-require 'redcarpet'
+require 'active_blog/markdown'
 require 'active_blog/ext/string'
 
 module ActiveBlog
@@ -32,6 +32,10 @@ module ActiveBlog
   # Blog posts per page
   mattr_accessor :paginates_per
   @@paginates_per = 10
+
+  # Blog Rails template
+  mattr_accessor :template_layout
+  @@template_layout = "layouts/application"
 
   def self.setup
     yield self

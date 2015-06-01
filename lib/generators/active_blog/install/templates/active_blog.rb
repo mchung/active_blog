@@ -9,7 +9,7 @@ ActiveBlog.setup do |config|
   # config.author_name = "John Doe"
 
   # Blog author's URI
-  # config.author_name = "http://example.com"
+  # config.author_uri = "http://example.com"
 
   # Blog author's email
   # config.author_email = "mchung@example.com"
@@ -19,4 +19,7 @@ ActiveBlog.setup do |config|
 
   # Blog posts per page
   # config.paginates_per = 10
+
+  # Blog Rails template
+  # config.template_layout = "layouts/application"
 end

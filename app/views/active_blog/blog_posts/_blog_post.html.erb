@@ -4,7 +4,7 @@
 
   Google Rich Snippets doesn't like nested schemas in certain cases.
 %>
-<div class="active_blog entry" <%= show ? '' : "itemscope itemtype='http://schema.org/BlogPosting'" %>>
+<div class="active_blog entry" <%= show ? '' : 'itemscope itemtype="http://schema.org/BlogPosting"'.html_safe %>>
   <%- if show %>
     <%= content_for :schema do %>
       <%= render :partial => 'blog_post_schema', :locals => {:blog_post => blog_post} %>
@@ -13,20 +13,15 @@
     <%= render :partial => 'blog_post_schema', :locals => {:blog_post => blog_post} %>
   <% end %>
 
-  <h6>
-    <%= blog_post.published_at.strftime("%B %e %G") %>
-    <% if blog_post.new_record? %>
-      <a href="" itemscope itemprop="url">∞</a>
-    <% else %>
-      <a href="<%= active_blog_post_path(blog_post.cached_slug) %>">∞</a>
-    <% end %>
-  </h6>
+  <h4>
+    <%= blog_post.published_at.strftime("%B %-e, %G") %>
+  </h4>
+
   <h2>
-    <%= blog_post.title %>
+    <%= link_to(blog_post.title, active_blog_post_path(blog_post.cached_slug)) %>
   </h2>
 
   <div class="active_blog body">
-    <%= markdown(blog_post.body || "") %>
+    <%= markdown.render(blog_post.body || "") %>
   </div>
 </div>
-<hr/>

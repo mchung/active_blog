@@ -3,4 +3,5 @@ ActiveAdmin.register ActiveBlog::BlogPost do
   show :title => :title do
     render 'active_blog/active_admin/show'
   end
+  permit_params :title, :body, :draft, :published_at
 end

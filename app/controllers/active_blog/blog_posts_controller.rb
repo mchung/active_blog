@@ -1,5 +1,6 @@
 module ActiveBlog
   class BlogPostsController < ApplicationController
+    layout ActiveBlog.template_layout
 
     before_filter :only => [:index, :show, :archives] do
       @recent_blog_posts = BlogPost.live.recent
@@ -14,17 +15,12 @@ module ActiveBlog
     end
 
     def show
-      @blog_post = BlogPost.live.where(:cached_slug => params[:cached_slug]).first
-      if @blog_post
-        render
-      else
-        # TODO(mc): Should 404
-        redirect_to active_blog_path, :notice => "No blog post with that URL"
-      end
+      @blog_post = BlogPost.blog_post(params[:cached_slug])
     end
 
+    # Move into ActiveAdmin responsibility
     def preview
-      @blog_post = BlogPost.new(params[:active_blog_blog_post])
+      @active_blog_blog_post = BlogPost.new(post_params)
       @blog_post_partial = render_to_string(:partial => 'active_blog/active_admin/blog_post_show')
 
       respond_to do |format|
@@ -33,10 +29,16 @@ module ActiveBlog
     end
 
     def atom
-      @blog_posts = BlogPost.live.order('published_at DESC').limit(10)
+      @blog_posts = BlogPost.live.limit(10)
       respond_to do |format|
         format.xml
       end
     end
+
+    private
+
+      def post_params
+        params.require(:active_blog_blog_post).permit(:title, :body, :draft, :published_at)
+      end
   end
 end
